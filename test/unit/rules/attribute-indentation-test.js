@@ -229,9 +229,43 @@ generateRuleTests({
       template:
         '<SiteHeader' +
         '\n' +
-        '  @selected={{this.user.country}} as |Option|' +
+        '  @selected={{this.user.country}}' +
         '\n' +
-        '>{{#each this.availableCountries as |country|}}' +
+        '  ...attributes' +
+        '\n' +
+        '  {{on "click" this.onClick}}' +
+        '\n' +
+        'as |Option|' +
+        '\n' +
+        '>' +
+        '\n' +
+        '{{#each this.availableCountries as |country|}}' +
+        '\n' +
+        '<Option @value={{country}}>{{country.name}}</Option>' +
+        '\n' +
+        '{{/each}}' +
+        '\n' +
+        '</SiteHeader>',
+    },
+    {
+      config: {
+        'process-elements': true,
+        'modifiers-first': true,
+      },
+      template:
+        '<SiteHeader' +
+        '\n' +
+        '  {{on "click" this.onClick}}' +
+        '\n' +
+        '  @selected={{this.user.country}}' +
+        '\n' +
+        '  ...attributes' +
+        '\n' +
+        'as |Option|' +
+        '\n' +
+        '>' +
+        '\n' +
+        '{{#each this.availableCountries as |country|}}' +
         '\n' +
         '<Option @value={{country}}>{{country.name}}</Option>' +
         '\n' +

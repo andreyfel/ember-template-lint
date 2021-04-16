@@ -140,7 +140,8 @@ Block form (HTML)
 * boolean - `true` - Enables the rule to be enforced when the opening invocation has more than 80 characters or when it spans multiple lines.
 * object - { 'indentation': n spaces } - Indentation length for attributes (defaults to `2`).
 * object - { 'open-invocation-max-len': n characters } - Maximum length of the opening invocation.
-* object - { 'process-elements': `true` } - Also validate the indentation of HTML/SVG elements.
+* object - { 'process-elements': boolean } - Also validate the indentation of HTML/SVG elements (defaults to `true`).
+* object - { 'modifiers-first': boolean } : Modifiers must be specified before attributes and arguments (defaults to `false`).
 * object - { 'element-open-end': `new-line`|`last-attribute` } - Enforce the position of the closing brace `>` to be on a new line or next to the last attribute (defaults to `new-line`).
 * object - { 'mustache-open-end': `new-line`|`last-attribute` } - Enforce the position of the closing braces `}}` to be on a new line or next to the last attribute (defaults to `new-line`).
 * object - { 'as-indentation': `attribute`|`closing-brace` } - Enforce the position of the `as |param|` to be indented at the same level as closing brace or attribute (defaults to `closing-brace`).
